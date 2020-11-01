@@ -1,0 +1,35 @@
+      The Ada Generic Library: Linear List Processing Packages
+                              ERRATA
+
+Affecting the code:
+
+Section 7.4.7, p. 132.  In the Implementation, replace the line
+"return To_Be_Done;" by "return S2;"
+
+This correction has been made in the source files on the diskette
+(version 1.01 and later).
+
+
+Affecting the documentation only:
+
+Section 7.4.1, p. 126.  In the Time field, replace "order nm" by
+order "nf"
+
+Section 6.1.5, p. 45.  Replace the end of the first sentence by
+"with the exception of Sort, Delete_Duplicates, Delete_Copy_Duplicates,
+and Search."  Add a new paragraph at the end of the subsection:
+
+   The time for Search is order kn, where k and n are the lengths of
+   its arguments.  In practice this worst case behavior is seldom
+   achieved; typically the time is linear in n."
+
+Section 6.5.56, p. 110.  Replace Time field by "order knm".  Replace
+where field by "k = length(S1), n = length(S2) and m is the average
+time for Test.  (In practice this worst case behavior is seldom
+achieved; typically the time is linear in n.)"
+
+Section 7.4.29, p. 158.  Same correction as above.
+
+Section 10.5.39, p. 224.  Same correction as above.
+
+

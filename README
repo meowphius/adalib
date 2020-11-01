@@ -1,0 +1,72 @@
+This is the README file concerning installation of the Ada Generic Library.
+
+
+                           Introduction
+
+This file describes the source files for the the Ada packages described in
+the book
+
+  David R. Musser and Alexander A. Stepanov
+  The Ada Generic Library: Linear List Processing Packages
+  Compass Series, Springer-Verlag, 1989.
+
+Also included are test suite files and a sample command file for
+compiling the packages with the Digital Equipment Corporation VAX Ada
+compiler.  Any problems with installing or using the library should be
+referred to musser@cs.rpi.edu.
+
+                        Obtaining the Files
+
+The files for the library are available via anonymous FTP from
+ftp.cs.rpi.edu.  FTPing the files may have already been performed,
+so you may be reading this from a directory on your local fileserver
+that contains the files.  If not, log into ftp.cs.rpi.edu with
+user name anonymous; when a password is requested use your email
+address. The files are in the directory adv-prog/adagenlib, both
+individually in uncompressed form and as a compressed Unix sharfile,
+sharfile.zip.  Be sure you put the ftp connection in binary mode
+(with the binary command) before retrieving sharfile.zip.
+
+        Setting Up Library Directories and Compiling the Files
+
+VAX DCL command procedures are included for compiling the files with
+the VAX Ada Compiler.  Instructions for using these command
+procedures follow; for other compilers the following instructions and
+the VAX command procedures may be used as a guide to preparing
+compilation command (e.g., they show a correct compilation order).
+
+To refer to the root directory for the library, we assume that
+LIB$DISK is a DCL logical symbol defined to be the device on on which
+the library directory resides and DCL symbol LIBROOT is defined as as
+the directory path to the library subdirectory, written without the
+enclosing square brackets. E.g., if the files reside in
+USR$DISK1:[ADAGENLIB], one would use
+
+  $ define LIB$DISK USR$DISK1
+  $ LIBROOT := ADAGENLIB
+
+As a first step in compiling the library, one should perform the
+appropriate local versions of the above two DCL commands.  Then
+
+  $ set default LIB$DISK:['LIBROOT]
+
+places one in the root directory of the library.  The remaining
+step is
+
+  $ @build
+
+which invokes the DCL command file BUILD.COM in ['LIBROOT].  
+
+
+                        Disk Space Required
+
+The total amount of disk space needed for all the source and compiled
+files is about 10100 blocks.  Compiling the files with @build will actually
+take about 12200 blocks, because .LIS files are produced by the
+ADA/LIST commands.  These may be deleted, or not generated in the
+first place if the /LIST option is removed from each ADA command.
+
+                              Errata
+
+See also the ERRATA file for information about corrections to the
+documentation in the book.  
